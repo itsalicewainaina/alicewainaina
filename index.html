@@ -262,16 +262,8 @@
     .contact-socials { display: flex; flex-wrap: wrap; gap: 17px; }
     .contact-socials a { color: var(--muted); font-size: 11px; }
     .contact-socials a:hover { color: var(--accent); }
-    .contact-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; padding: 24px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); box-shadow: var(--shadow); }
-    .field { display: flex; min-width: 0; flex-direction: column; gap: 7px; }
-    .field-full { grid-column: 1 / -1; }
-    .field label { color: var(--muted); font-size: 11px; }
-    .field input, .field textarea { width: 100%; border: 1px solid var(--border); border-radius: 5px; outline: none; background: var(--page); color: var(--text); font-size: 12px; transition: border-color 150ms ease, box-shadow 150ms ease; }
-    .field input { min-height: 44px; padding: 10px 12px; }
-    .field textarea { min-height: 135px; padding: 12px; resize: vertical; }
-    .field input:focus, .field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--glow); }
-    .contact-form button:disabled { cursor: wait; opacity: 0.65; transform: none; }
-    .form-status { grid-column: 1 / -1; min-height: 20px; margin: -5px 0 0; color: var(--accent); font-size: 11px; }
+    .contact-action { display: flex; min-height: 170px; align-items: center; border-left: 1px solid var(--border); padding-left: clamp(24px, 5vw, 58px); }
+    .contact-email-button { min-width: 180px; min-height: 54px; }
     .cv-banner { display: flex; align-items: center; justify-content: space-between; gap: 25px; margin-top: 44px; padding: 23px 26px; border: 1px solid var(--border); border-radius: 7px; background: linear-gradient(105deg, color-mix(in srgb, var(--accent-deep) 17%, var(--surface)), var(--surface)); }
     .cv-banner p { margin: 0; font-size: 16px; font-weight: 400; }
 
@@ -339,7 +331,7 @@
       .project-description { min-height: 0; }
       .timeline-head { flex-direction: column; gap: 7px; }
       .contact-grid { gap: 32px; }
-      .contact-form { padding: 18px; }
+      .contact-action { min-height: 0; border-top: 1px solid var(--border); border-left: 0; padding: 24px 0 0; }
       .cv-banner { align-items: flex-start; flex-direction: column; margin-top: 38px; padding: 22px; }
       .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 20px; }
       .cursor-spotlight { display: none; }
@@ -566,17 +558,9 @@
             <div class="contact-detail"><a data-cursor="Connect ✉️" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com" target="_blank" rel="noopener noreferrer">alicewainaina454@gmail.com ↗</a><span>Nairobi, Kenya · Open for Remote &amp; Hybrid Opportunities</span></div>
             <div class="contact-socials" aria-label="Social links"><a data-cursor="Connect ✉️" href="https://github.com/itsalicewainaina" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a data-cursor="Connect ✉️" href="https://www.linkedin.com/in/alice-wainaina/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a data-cursor="Connect ✉️" href="https://www.kaggle.com/itsmealice" target="_blank" rel="noopener noreferrer">Kaggle ↗</a><a data-cursor="Connect ✉️" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a></div>
           </div>
-          <form class="contact-form" id="contact-form" action="https://formsubmit.co/alicewainaina454@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="Portfolio contact form message">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden>
-            <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
-            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-            <div class="field field-full"><label for="subject">Subject</label><input id="subject" name="subject" required></div>
-            <div class="field field-full"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-            <button class="button field-full" type="submit">Send Message <span class="button-arrow" aria-hidden="true">↗</span></button>
-            <p class="form-status" id="form-status" aria-live="polite"></p>
-          </form>
+          <div class="contact-action">
+            <a class="button contact-email-button" data-cursor="Connect ✉️" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com&amp;su=Portfolio%20inquiry%20for%20Alice%20Wainaina&amp;body=Hi%20Alice%2C%0D%0A%0D%0AI%27d%20like%20to%20connect%20about%20a%20role%20or%20project." target="_blank" rel="noopener noreferrer">Email Me <span class="button-arrow" aria-hidden="true">↗</span></a>
+          </div>
         </div>
         <div class="cv-banner"><p>Looking for my full resume?</p><a class="button" data-cursor="Get PDF 📄" href="AliceWainainaCV.pdf" target="_blank" rel="noopener noreferrer" download="AliceWainainaCV.pdf">Download Full CV <span class="button-arrow" aria-hidden="true">↗</span></a></div>
       </div>
@@ -693,42 +677,6 @@
       window.addEventListener("blur", hideSpotlight);
     }
 
-    document.getElementById("contact-form").addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      const values = new FormData(form);
-      const status = document.getElementById("form-status");
-      const submitButton = form.querySelector('button[type="submit"]');
-      submitButton.disabled = true;
-      status.textContent = "Sending your message...";
-
-      try {
-        const response = await fetch("https://formsubmit.co/ajax/alicewainaina454@gmail.com", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            name: values.get("name"),
-            email: values.get("email"),
-            subject: values.get("subject"),
-            message: values.get("message"),
-            _subject: `Portfolio message: ${values.get("subject")}`,
-            _captcha: "false",
-            _honey: values.get("_honey"),
-          }),
-        });
-        const result = await response.json();
-        if (!response.ok || (result.success !== true && result.success !== "true")) {
-          throw new Error("The form service did not accept the message.");
-        }
-        form.reset();
-        status.textContent = "Message sent. Thanks for reaching out.";
-      } catch {
-        status.textContent = "Completing your submission through FormSubmit...";
-        form.submit();
-      } finally {
-        submitButton.disabled = false;
-      }
-    });
   </script>
 </body>
 </html>
