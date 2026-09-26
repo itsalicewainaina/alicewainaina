@@ -723,7 +723,8 @@
         form.reset();
         status.textContent = "Message sent. Thanks for reaching out.";
       } catch {
-        status.innerHTML = 'Message could not be sent. If this is your first message, check your inbox for the FormSubmit activation email. Or <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alicewainaina454@gmail.com" target="_blank" rel="noopener noreferrer">open a Gmail draft</a>.';
+        status.textContent = "Completing your submission through FormSubmit...";
+        form.submit();
       } finally {
         submitButton.disabled = false;
       }
