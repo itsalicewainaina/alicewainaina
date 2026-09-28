@@ -1,109 +1,48 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080612">
-  <meta name="description" content="Alice Wainaina is a Data Analyst, BI Analyst, and Operations Analytics Specialist in Nairobi, Kenya, building reliable reporting and decision-ready data systems.">
+  <meta name="theme-color" content="#f7fafc">
+  <meta name="description" content="Alice Wainaina is a Data Analyst and Business Analytics Specialist focused on SQL, Python, Excel, Power BI, Tableau, and business intelligence.">
   <title>Alice Wainaina | Data &amp; Operations Analytics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: dark;
-      --page: #080612;
-      --surface: #120e24;
-      --surface-raised: #19132e;
-      --text: #f7f4ff;
-      --muted: #aaa3bf;
-      --accent: #a855f7;
-      --accent-deep: #7c3aed;
-      --border: rgba(168, 85, 247, 0.2);
-      --glow: rgba(168, 85, 247, 0.18);
-      --line: rgba(226, 216, 255, 0.15);
-      --header: rgba(8, 6, 18, 0.84);
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
-    }
-
-    [data-theme="light"] {
       color-scheme: light;
-      --page: #f8fafc;
+      --page: #f7fafc;
       --surface: #ffffff;
-      --surface-raised: #f1eff8;
-      --text: #19132b;
-      --muted: #655e76;
-      --accent: #7c3aed;
-      --accent-deep: #6d28d9;
-      --border: rgba(124, 58, 237, 0.2);
-      --glow: rgba(124, 58, 237, 0.11);
-      --line: rgba(34, 25, 59, 0.13);
-      --header: rgba(248, 250, 252, 0.88);
-      --shadow: 0 24px 70px rgba(42, 24, 74, 0.09);
+      --surface-raised: #edf4f9;
+      --text: #202b2c;
+      --muted: #596674;
+      --accent: #356b93;
+      --accent-deep: #285a80;
+      --border: #d8e3ed;
+      --glow: rgba(53, 107, 147, 0.12);
+      --line: rgba(32, 43, 44, 0.08);
+      --header: rgba(247, 250, 252, 0.96);
+      --shadow: 0 12px 32px rgba(27, 49, 47, 0.08);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 92px; }
     body {
       margin: 0;
-      background:
-        radial-gradient(ellipse at 8% 7%, rgba(89, 38, 144, 0.15), transparent 31rem),
-        radial-gradient(ellipse at 95% 38%, rgba(87, 48, 135, 0.09), transparent 32rem),
-        var(--page);
+      background: var(--page);
       color: var(--text);
-      font-family: "Lexend", sans-serif;
+      font-family: "Source Sans 3", sans-serif;
       font-size: 15px;
       font-weight: 300;
       line-height: 1.7;
-      transition: background-color 220ms ease, color 220ms ease;
-    }
-    body::before {
-      position: fixed;
-      z-index: -1;
-      inset: 0;
-      background-image: radial-gradient(var(--line) 0.7px, transparent 0.7px);
-      background-size: 34px 34px;
-      content: "";
-      mask-image: linear-gradient(to bottom, black, transparent 75%);
-      pointer-events: none;
+      transition: color 180ms ease;
     }
     a { color: inherit; text-decoration: none; }
     button, input, textarea { font: inherit; }
     button, a { -webkit-tap-highlight-color: transparent; }
     img { display: block; max-width: 100%; }
     ::selection { background: var(--accent); color: #fff; }
-
-    .cursor-spotlight {
-      position: fixed;
-      z-index: 20;
-      top: 0;
-      left: 0;
-      display: grid;
-      width: 12px;
-      height: 12px;
-      place-items: center;
-      border: 2px solid #a855f7;
-      border-radius: 50%;
-      background: rgba(18, 14, 36, 0.15);
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
-      opacity: 0;
-      pointer-events: none;
-      transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
-      transition: width 0.25s ease, height 0.25s ease, opacity 0.2s, border-radius 0.2s ease, background 0.2s ease;
-      will-change: transform, width, height;
-    }
-    .cursor-spotlight.is-visible { opacity: 1; }
-    .cursor-spotlight.is-morphed {
-      width: var(--spotlight-width, 130px);
-      height: 34px;
-      border-color: rgba(168, 85, 247, 0.5);
-      border-radius: 999px;
-      background: rgba(18, 14, 36, 0.8);
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
-      backdrop-filter: blur(12px);
-    }
-    .cursor-label { padding-inline: 12px; color: #f7f4ff; font-size: 10px; font-weight: 500; line-height: 1; opacity: 0; white-space: nowrap; transition: opacity 0.15s ease; }
-    .cursor-spotlight.is-morphed .cursor-label { opacity: 1; }
 
     .container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
     .section { padding: 82px 0; }
@@ -126,7 +65,7 @@
     h2 { margin-bottom: 13px; font-size: clamp(30px, 3.4vw, 42px); font-weight: 500; letter-spacing: 0; }
     h3 { margin-bottom: 12px; font-size: 19px; font-weight: 500; }
     .section-heading > p:last-child { max-width: 640px; margin-bottom: 0; color: var(--muted); font-size: 15px; }
-    .gradient-text { color: var(--accent); background: linear-gradient(100deg, var(--accent), #d5a8ff 70%); background-clip: text; -webkit-text-fill-color: transparent; }
+    .gradient-text { color: var(--accent); }
 
     .site-header {
       position: sticky;
@@ -134,7 +73,6 @@
       top: 0;
       border-bottom: 1px solid var(--border);
       background: var(--header);
-      backdrop-filter: blur(18px);
     }
     .nav-wrap { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 22px; }
     .brand { flex: 0 0 auto; color: var(--text); font-size: 19px; font-weight: 700; letter-spacing: 0; }
@@ -150,7 +88,7 @@
       flex: 0 0 auto;
       place-items: center;
       border: 1px solid var(--border);
-      border-radius: 50%;
+      border-radius: 5px;
       background: var(--surface);
       color: var(--text);
       cursor: pointer;
@@ -168,8 +106,8 @@
       padding: 10px 18px;
       border: 1px solid transparent;
       border-radius: 6px;
-      background: linear-gradient(110deg, var(--accent-deep), var(--accent));
-      box-shadow: 0 8px 26px rgba(124, 58, 237, 0.2);
+      background: var(--accent-deep);
+      box-shadow: none;
       color: #fff;
       cursor: pointer;
       font-size: 13px;
@@ -177,7 +115,7 @@
       line-height: 1.2;
       transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease;
     }
-    .button:hover { box-shadow: 0 12px 30px rgba(124, 58, 237, 0.32); transform: translateY(-2px); }
+    .button:hover { background: var(--accent); transform: translateY(-1px); }
     .button-outline { border-color: var(--border); background: var(--surface); box-shadow: none; color: var(--text); }
     .button-outline:hover { border-color: var(--accent); box-shadow: none; }
     .button-small { min-height: 38px; padding: 8px 13px; font-size: 12px; }
@@ -189,30 +127,27 @@
     .hero-summary { max-width: 580px; margin-bottom: 23px; color: var(--muted); font-size: 14px; line-height: 1.8; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
     .hero-visual { position: relative; width: 100%; max-width: 380px; justify-self: center; }
-    .hero-visual::before { position: absolute; z-index: -1; inset: 10% -10% -8% 12%; border: 1px solid var(--border); border-radius: 47% 53% 50% 50%; content: ""; transform: rotate(8deg); }
-    .hero-visual::after { position: absolute; z-index: -1; inset: 5% -4% -2% 3%; border-radius: 50%; background: radial-gradient(ellipse, rgba(168, 85, 247, 0.18), transparent 68%); content: ""; filter: blur(20px); }
-    .hero-visual img { width: 100%; aspect-ratio: 1 / 1.05; border-radius: 48% 48% 42% 42%; object-fit: cover; object-position: 50% 38%; filter: saturate(1.08) contrast(1.04) brightness(1.02); box-shadow: 0 0 35px rgba(168, 85, 247, 0.35); mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); }
+    .hero-visual img { width: 100%; aspect-ratio: 1 / 1.05; border-radius: 8px; object-fit: cover; object-position: 50% 38%; }
     .availability { position: absolute; right: -21px; bottom: 20%; display: flex; align-items: center; gap: 10px; padding: 13px 16px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); box-shadow: var(--shadow); color: var(--muted); font-size: 11px; }
-    .availability-dot { width: 8px; height: 8px; border-radius: 50%; background: #55d6a1; box-shadow: 0 0 13px rgba(85, 214, 161, 0.55); }
+    .availability-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 
     .impact-band { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 65%, transparent); }
-    .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-    .impact-item { min-height: 122px; padding: 24px 20px; border-right: 1px solid var(--border); }
-    .impact-item:first-child { border-left: 1px solid var(--border); }
-    .impact-value { display: block; margin-bottom: 8px; color: var(--accent); font-size: 25px; font-weight: 600; line-height: 1.2; }
-    .impact-label { color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .impact-grid { display: flex; flex-wrap: wrap; gap: 0; padding-block: 15px; }
+    .impact-item { min-height: 0; padding: 8px 18px; border-right: 1px solid var(--border); }
+    .impact-item:first-child { padding-left: 0; border-left: 0; }
+    .impact-value { display: none; }
+    .impact-label { color: var(--muted); font-size: 13px; line-height: 1.6; }
 
     .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 66px; }
     .about-gallery { position: relative; display: grid; width: min(100%, 330px); aspect-ratio: 1; justify-self: center; place-items: center; }
-    .about-gallery .about-photo-primary { position: absolute; inset: 0; width: 100%; height: 100%; border: 1px solid var(--border); border-radius: 50%; object-fit: cover; object-position: center 30%; filter: saturate(1.04) contrast(1.02); box-shadow: 0 0 35px rgba(168, 85, 247, 0.35); mask-image: radial-gradient(circle, #000 65%, rgba(0, 0, 0, 0.8) 88%, transparent 100%); }
-    .about-gallery::after { position: absolute; inset: 8px; border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 50%; content: ""; pointer-events: none; }
+    .about-gallery .about-photo-primary { position: absolute; inset: 0; width: 100%; height: 100%; border: 1px solid var(--border); border-radius: 8px; object-fit: cover; object-position: center 30%; }
     .about-copy h2 { max-width: 600px; }
-    .about-copy .subheading { margin: 0 0 16px; color: var(--accent); font-size: 15px; font-weight: 400; line-height: 1.6; }
-    .about-copy > p:last-child { max-width: 590px; margin-bottom: 0; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .about-copy > p { max-width: 590px; margin-bottom: 16px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .about-copy > p:last-child { margin-bottom: 0; }
 
     .skills-section { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 42%, transparent); }
     .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-    .skill-card, .project-card, .education-card { border: 1px solid var(--border); border-radius: 7px; background: color-mix(in srgb, var(--surface) 88%, transparent); }
+    .skill-card, .project-card, .education-card { border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
     .skill-card { min-height: 220px; padding: 23px; transition: border-color 180ms ease, transform 180ms ease; }
     .skill-card:hover, .project-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); transform: translateY(-4px); }
     .skill-index { display: block; margin-bottom: 22px; color: var(--accent); font-size: 11px; font-weight: 500; letter-spacing: 1px; }
@@ -264,15 +199,15 @@
     .contact-socials a:hover { color: var(--accent); }
     .contact-action { display: flex; min-height: 170px; align-items: center; border-left: 1px solid var(--border); padding-left: clamp(24px, 5vw, 58px); }
     .contact-email-button { min-width: 180px; min-height: 54px; }
-    .cv-banner { display: flex; align-items: center; justify-content: space-between; gap: 25px; margin-top: 44px; padding: 23px 26px; border: 1px solid var(--border); border-radius: 7px; background: linear-gradient(105deg, color-mix(in srgb, var(--accent-deep) 17%, var(--surface)), var(--surface)); }
+    .cv-banner { display: flex; align-items: center; justify-content: space-between; gap: 25px; margin-top: 44px; padding: 23px 26px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
     .cv-banner p { margin: 0; font-size: 16px; font-weight: 400; }
 
-    .site-footer { position: relative; isolation: isolate; overflow: hidden; border-top: 1px solid var(--border); }
-    .site-footer::before { position: absolute; z-index: -1; inset: 0; background-image: linear-gradient(90deg, var(--page) 0%, color-mix(in srgb, var(--page) 76%, transparent) 43%, transparent 100%), linear-gradient(0deg, var(--page) 0%, transparent 72%), url("About%20me%203.png"); background-repeat: no-repeat; background-position: center, center, right 43%; background-size: cover, cover, min(680px, 66%) auto; content: ""; opacity: 0.55; filter: saturate(0.72) contrast(1.04); pointer-events: none; }
+    .site-footer { position: relative; isolation: isolate; overflow: hidden; border-top: 1px solid var(--border); background: var(--surface-raised); }
+    .site-footer::before { position: absolute; z-index: -1; inset: 0; background: url("About%20me%203.png") no-repeat right center / min(360px, 34%) auto; content: ""; pointer-events: none; }
     .footer-inner { position: relative; z-index: 1; display: flex; min-height: 155px; align-items: center; justify-content: space-between; gap: 15px; }
     .footer-inner p { margin: 0; color: var(--muted); font-size: 10px; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 17px; }
-    .footer-links a { color: var(--muted); font-size: 10px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 17px; margin-right: min(360px, 34%); }
+    .footer-links a { color: var(--text); font-size: 12px; }
     .footer-links a:hover { color: var(--accent); }
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
@@ -297,13 +232,12 @@
       .hero h1 { font-size: 46px; }
       .hero-visual { max-width: 270px; }
       .availability { right: -8px; padding: 10px 12px; }
-      .impact-item { min-height: 132px; padding: 24px 16px; }
-      .impact-value { font-size: 21px; }
       .about-grid { grid-template-columns: 0.85fr 1.15fr; gap: 30px; }
       .skills-grid { grid-template-columns: 1fr; }
       .skill-card { min-height: auto; }
       .skill-index { margin-bottom: 14px; }
       .contact-grid { gap: 32px; }
+      .site-footer::before { background-position: right center; background-size: min(200px, 30%) auto; }
     }
     @media (max-width: 600px) {
       .container { width: calc(100% - 36px); }
@@ -318,12 +252,9 @@
       .hero h1 { font-size: 40px; }
       .hero-summary { font-size: 13px; }
       .hero-actions .button { flex: 1 1 auto; }
-      .impact-grid { grid-template-columns: repeat(2, 1fr); }
-      .impact-item { min-height: 124px; padding: 21px 15px; }
-      .impact-item:nth-child(3) { border-left: 1px solid var(--border); }
-      .impact-item:nth-child(n + 3) { border-top: 1px solid var(--border); }
-      .impact-value { font-size: 19px; }
-      .impact-label { font-size: 10px; }
+      .impact-item { padding: 6px 12px; }
+      .impact-item:first-child { padding-left: 0; }
+      .impact-label { font-size: 12px; }
       .about-grid { grid-template-columns: 1fr; gap: 30px; }
       .about-gallery { width: min(100%, 300px); justify-self: center; }
       .projects-grid, .education-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -334,7 +265,9 @@
       .contact-action { min-height: 0; border-top: 1px solid var(--border); border-left: 0; padding: 24px 0 0; }
       .cv-banner { align-items: flex-start; flex-direction: column; margin-top: 38px; padding: 22px; }
       .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 20px; }
-      .cursor-spotlight { display: none; }
+      .site-footer::before { background-position: right top; background-size: 140px auto; }
+      .footer-inner p, .footer-links { max-width: 56%; }
+      .footer-links { margin-right: 0; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
@@ -342,7 +275,6 @@
   </style>
 </head>
 <body>
-  <div class="cursor-spotlight" id="cursor-spotlight" aria-hidden="true"><span class="cursor-label"></span></div>
   <header class="site-header">
     <nav class="container nav-wrap" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="Alice Wainaina, home">Alice Wainaina<span>.</span></a>
@@ -355,8 +287,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch theme" data-cursor="Switch Theme ☀️/🌙"><span aria-hidden="true">☼</span></button>
-        <a class="button button-small nav-cv" data-cursor="Get PDF 📄" href="Alice_Wainaina_CV_Data_Analyst.pdf" target="_blank" rel="noopener noreferrer" download="AliceWainainaCV.pdf">Download CV <span class="button-arrow" aria-hidden="true">↗</span></a>
+        <a class="button button-small nav-cv" href="Alice_Wainaina_CV.pdf" target="_blank" rel="noopener noreferrer" download="Alice_Wainaina_CV.pdf">Download CV <span class="button-arrow" aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false"><span aria-hidden="true">☰</span></button>
       </div>
     </nav>
@@ -365,26 +296,29 @@
   <main id="top">
     <section class="container hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">Data Analyst <span aria-hidden="true">·</span> BI Analyst <span aria-hidden="true">·</span> Operations Analytics Specialist</p>
+        <p class="eyebrow">Data Analyst <span aria-hidden="true">·</span> Business Analytics Specialist</p>
         <h1 id="hero-title">Turning business data into <span class="gradient-text">clear decisions.</span></h1>
-        <p class="hero-summary">I build reliable dashboards and reporting workflows from financial and operational data using SQL, Python, and Power BI.</p>
+        <p class="hero-summary">I use SQL, Python, Excel, Power BI, and Tableau for data analysis, dashboard development, and business intelligence.</p>
         <div class="hero-actions">
           <a class="button" href="#projects">Explore Projects <span class="button-arrow" aria-hidden="true">↓</span></a>
-          <a class="button button-outline" data-cursor="Get PDF 📄" href="Alice_Wainaina_CV_Data_Analyst.pdf" target="_blank" rel="noopener noreferrer" download="AliceWainainaCV.pdf">Download CV <span class="button-arrow" aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="Alice_Wainaina_CV.pdf" target="_blank" rel="noopener noreferrer" download="Alice_Wainaina_CV.pdf">Download CV <span class="button-arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
       <div class="hero-visual">
         <img src="me%20professional.png" alt="Alice Wainaina">
-        <div class="availability"><span class="availability-dot" aria-hidden="true"></span> Nairobi, Kenya · Remote friendly</div>
       </div>
     </section>
 
-    <section class="impact-band" aria-label="Selected impact">
+    <section class="impact-band" aria-label="Core skills">
       <div class="container impact-grid">
-        <div class="impact-item"><span class="impact-value">60,000+</span><span class="impact-label">Survey records modeled and analyzed in SQL</span></div>
-        <div class="impact-item"><span class="impact-value">Automated</span><span class="impact-label">Financial and operational reporting pipelines</span></div>
-        <div class="impact-item"><span class="impact-value">High Integrity</span><span class="impact-label">Reconciled portfolio and financial records</span></div>
-        <div class="impact-item"><span class="impact-value">Multi-Page BI</span><span class="impact-label">Interactive workforce and portfolio dashboards</span></div>
+        <div class="impact-item"><span class="impact-label">SQL</span></div>
+        <div class="impact-item"><span class="impact-label">Python</span></div>
+        <div class="impact-item"><span class="impact-label">Excel</span></div>
+        <div class="impact-item"><span class="impact-label">Power BI</span></div>
+        <div class="impact-item"><span class="impact-label">Tableau</span></div>
+        <div class="impact-item"><span class="impact-label">Data analysis</span></div>
+        <div class="impact-item"><span class="impact-label">Dashboard development</span></div>
+        <div class="impact-item"><span class="impact-label">Business intelligence</span></div>
       </div>
     </section>
 
@@ -394,10 +328,12 @@
           <img class="about-photo-primary" src="About%20Me.png" alt="Alice Wainaina" loading="lazy">
         </div>
         <div class="about-copy">
-          <p class="eyebrow">A little about me</p>
           <h2 id="about-title">About Me</h2>
-          <p class="subheading">Connecting Data Architecture, Operational Efficiency, and Strategic Execution</p>
-          <p>I am a Data Analyst and Business Analytics Operations Specialist based in Nairobi, Kenya. My work focuses on building the data infrastructure, automated pipelines, and operational workflows that enable organizations to scale efficiently and make confident, data-backed decisions. My analytical approach pairs technical rigor (SQL, Python, Power BI) with operational strategy (CRM data architecture, business process modeling, and workflow automation). Rather than delivering static, one-off reports, I design reliable data pipelines that transform fragmented data sources into centralized, decision-ready systems. Whether optimizing financial reporting cycles, analyzing workforce retention drivers, or mapping regional infrastructure data, I focus on creating sustainable data systems that eliminate operational friction and deliver immediate clarity to leadership.</p>
+          <p>I’m a Data Analyst and Business Analytics Specialist passionate about turning complex data into clear insights, efficient processes, and better business decisions.</p>
+          <p>My experience spans financial analytics, operational reporting, performance analysis, dashboard development, data quality, and workflow automation. I work with tools such as SQL, Python, Excel, Power BI, and Tableau to transform raw and fragmented data into structured, decision-ready information.</p>
+          <p>Beyond analysis, I’m interested in how data can improve the way organizations operate. I have worked with CRM systems, automated reporting processes, operational workflows, and performance tracking to improve visibility, reduce manual work, and help teams make more informed decisions.</p>
+          <p>I approach every project by first understanding the business problem, then using data to uncover what is happening, why it is happening, and what can be done about it. My goal is not simply to create reports or dashboards, but to build practical analytical solutions that create measurable business value.</p>
+          <p>Currently pursuing a Bachelor of Science in Data Science, I’m continuously developing my technical and analytical capabilities while applying them to real-world business challenges.</p>
         </div>
       </div>
     </section>
@@ -483,50 +419,69 @@
           <article class="timeline-item">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-head">
-              <div><h3>Operations Data &amp; Workflow Coordinator</h3><p class="timeline-org">Melanin Tax Solutions · USA · Remote</p></div>
-              <span class="timeline-date">May 2026 – August 2026</span>
+              <div><h3>Operations &amp; Executive Assistant</h3><p class="timeline-org">Melanin Tax Solutions USA · Remote</p></div>
+              <span class="timeline-date">May 2026 – September 2026</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Managed CRM databases across HubSpot and GoHighLevel, maintaining accurate client records and optimizing follow-up tracking workflows.</li>
-              <li>Designed automated operational workflows in ClickUp and Notion, establishing Standard Operating Procedures (SOPs) for cross-functional execution.</li>
-              <li>Conducted operational data analysis and workflow assessments to deliver actionable business research directly to executive leadership.</li>
-              <li>Implemented AI productivity analytics to streamline documentation, administrative research, and reporting cycles.</li>
+              <li>Improved day-to-day business operations by coordinating executive priorities, client communications, documentation, and follow-up workflows.</li>
+              <li>Optimized CRM processes using HubSpot and GoHighLevel, improving client data accuracy and follow-up visibility.</li>
+              <li>Designed and implemented operational workflows in ClickUp and Notion, creating better task visibility and team accountability.</li>
+              <li>Developed SOPs and process documentation that standardized recurring processes and supported more scalable operations.</li>
+              <li>Supported leadership decision-making through business research, reporting, workflow analysis, and operational recommendations.</li>
+              <li>Leveraged AI-powered tools to streamline documentation, meeting summaries, content development, and administrative workflows.</li>
+              <li>Coordinated multiple projects remotely while maintaining accuracy, confidentiality, and timely execution.</li>
             </ul>
           </article>
           <article class="timeline-item">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-head">
-              <div><h3>Program Delivery Operations Coordinator</h3><p class="timeline-org">ALX Africa · Remote</p></div>
-              <span class="timeline-date">May 2025 – May 2026</span>
+              <div><h3>Program Delivery</h3><p class="timeline-org">ALX Africa · Remote</p></div>
+              <span class="timeline-date">September 2025 – May 2026</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Analyzed learner engagement, attendance, and retention datasets across cohorts using survey metrics and platform data to isolate drop-off factors.</li>
-              <li>Authored weekly data-backed recommendation reports for program managers to inform targeted interventions and boost cohort retention.</li>
-              <li>Reviewed technical project submissions as Pathway Review Lead, providing structured guidance that elevated overall project quality and submission timeliness.</li>
+              <li>Analysed learner engagement, attendance, and retention data to identify behavioural patterns, performance trends, and potential risk factors.</li>
+              <li>Produced weekly data-driven insight reports that supported programme execution, learner experience, and retention initiatives.</li>
+              <li>Mapped learner journeys and identified drop-off points, supporting targeted intervention planning.</li>
+              <li>Combined quantitative data with qualitative feedback to produce actionable insights for programme and product teams.</li>
             </ul>
           </article>
           <article class="timeline-item">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-head">
               <div><h3>Data Analyst</h3><p class="timeline-org">Mwananchi Credit Ltd. · Nairobi, Kenya</p></div>
-              <span class="timeline-date">March 2025 – September 2025</span>
+              <span class="timeline-date">March 2025 – March 2026</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Analyzed large financial and operational datasets across Finance, HR, and IT teams to guide executive business decisions.</li>
-              <li>Automated recurring performance and financial reports in Excel using advanced formulas and macros, significantly cutting manual reporting effort.</li>
-              <li>Designed interactive Power BI dashboards tracking loan repayment trends, portfolio health, and customer segmentation to enhance management visibility.</li>
-              <li>Executed detailed data validation and reconciliation protocols across high-volume loan records, ensuring high reporting accuracy.</li>
+              <li>Automated recurring financial and performance reporting, reducing manual workload by 31% and accelerating reporting cycles.</li>
+              <li>Built and maintained interactive Power BI dashboards covering repayment trends, portfolio performance, and customer segmentation, improving decision visibility by 23%.</li>
+              <li>Analysed large financial and operational datasets to identify trends and generate insights for Finance, HR, and IT teams.</li>
+              <li>Improved reporting accuracy to 97% through systematic data validation, reconciliation, duplicate removal, and quality checks.</li>
+              <li>Streamlined payroll and HR data preparation, ensuring accurate and structured inputs for internal financial processes.</li>
+              <li>Translated complex datasets into structured analytical reports and insights used to support leadership planning and business decisions.</li>
             </ul>
           </article>
           <article class="timeline-item">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-head">
-              <div><h3>Operations Coordinator</h3><p class="timeline-org">Pamoja Forum · Remote</p></div>
+              <div><h3>Pathway Reviewer</h3><p class="timeline-org">ALX Africa · Remote</p></div>
+              <span class="timeline-date">May 2025 – September 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Improved project quality and conceptual understanding by 19% through structured assessment and feedback.</li>
+              <li>Identified recurring learning gaps across cohorts and contributed insights that supported improvements to course guidance.</li>
+              <li>Maintained a 100% on-time feedback delivery rate while contributing to curriculum improvement discussions.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-head">
+              <div><h3>Operations &amp; Administrative Support Assistant</h3><p class="timeline-org">Pamoja Forum · Remote</p></div>
               <span class="timeline-date">September 2024 – March 2025</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Overhauled participant tracking systems and CRM databases, establishing data cleaning protocols to maintain high-integrity records.</li>
-              <li>Monitored program metrics and cross-functional project schedules, delivering structured progress summaries to leadership.</li>
+              <li>Improved operational coordination by maintaining tracking systems and supporting cross-team workflows.</li>
+              <li>Maintained accurate CRM and participant tracking systems, improving visibility of communications and ongoing activities.</li>
+              <li>Supported event planning, coordination, and administrative execution for remote and community-focused programmes.</li>
             </ul>
           </article>
         </div>
@@ -555,42 +510,23 @@
             <p class="eyebrow">Get in touch</p>
             <h2 id="contact-title">Let's Build Something <span class="gradient-text">Impactful</span></h2>
             <p>Open to Data Analyst, BI Analyst, and Business Operations roles.</p>
-            <div class="contact-detail"><a data-cursor="Connect ✉️" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com" target="_blank" rel="noopener noreferrer">alicewainaina454@gmail.com ↗</a><span>Nairobi, Kenya · Open for Remote &amp; Hybrid Opportunities</span></div>
-            <div class="contact-socials" aria-label="Social links"><a data-cursor="Connect ✉️" href="https://github.com/itsalicewainaina" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a data-cursor="Connect ✉️" href="https://www.linkedin.com/in/alice-wainaina/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a data-cursor="Connect ✉️" href="https://www.kaggle.com/itsmealice" target="_blank" rel="noopener noreferrer">Kaggle ↗</a><a data-cursor="Connect ✉️" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a></div>
+            <div class="contact-detail"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com" target="_blank" rel="noopener noreferrer">alicewainaina454@gmail.com ↗</a></div>
+            <div class="contact-socials" aria-label="Social links"><a href="https://github.com/itsalicewainaina" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/alice-wainaina/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.kaggle.com/itsmealice" target="_blank" rel="noopener noreferrer">Kaggle ↗</a><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a></div>
           </div>
           <div class="contact-action">
-            <a class="button contact-email-button" data-cursor="Connect ✉️" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com&amp;su=Portfolio%20inquiry%20for%20Alice%20Wainaina&amp;body=Hi%20Alice%2C%0D%0A%0D%0AI%27d%20like%20to%20connect%20about%20a%20role%20or%20project." target="_blank" rel="noopener noreferrer">Email Me <span class="button-arrow" aria-hidden="true">↗</span></a>
+            <a class="button contact-email-button" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com&amp;su=Portfolio%20inquiry%20for%20Alice%20Wainaina&amp;body=Hi%20Alice%2C%0D%0A%0D%0AI%27d%20like%20to%20connect%20about%20a%20role%20or%20project." target="_blank" rel="noopener noreferrer">Email Me <span class="button-arrow" aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="cv-banner"><p>Looking for my full resume?</p><a class="button" data-cursor="Get PDF 📄" href="Alice_Wainaina_CV_Data_Analyst.pdf" target="_blank" rel="noopener noreferrer" download="AliceWainainaCV.pdf">Download Full CV <span class="button-arrow" aria-hidden="true">↗</span></a></div>
+        <div class="cv-banner"><p>Looking for my full resume?</p><a class="button" href="Alice_Wainaina_CV.pdf" target="_blank" rel="noopener noreferrer" download="Alice_Wainaina_CV.pdf">Download Full CV <span class="button-arrow" aria-hidden="true">↗</span></a></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner"><p>© 2026 Alice Wainaina. Built for GitHub Pages.</p><div class="footer-links"><a data-cursor="Connect ✉️" href="https://github.com/itsalicewainaina" target="_blank" rel="noopener noreferrer">GitHub</a><a data-cursor="Connect ✉️" href="https://www.linkedin.com/in/alice-wainaina/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a data-cursor="Connect ✉️" href="https://www.kaggle.com/itsmealice" target="_blank" rel="noopener noreferrer">Kaggle</a><a data-cursor="Connect ✉️" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com" target="_blank" rel="noopener noreferrer">Email</a></div></div>
+    <div class="container footer-inner"><p>© 2026 Alice Wainaina. Built for GitHub Pages.</p><div class="footer-links"><a href="https://github.com/itsalicewainaina" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/alice-wainaina/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.kaggle.com/itsmealice" target="_blank" rel="noopener noreferrer">Kaggle</a><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alicewainaina454@gmail.com" target="_blank" rel="noopener noreferrer">Email</a></div></div>
   </footer>
 
   <script>
-    const root = document.documentElement;
-    const themeToggle = document.getElementById("theme-toggle");
-    const themeIcon = themeToggle.querySelector("span");
-    const storedTheme = localStorage.getItem("alice-portfolio-theme");
-    if (storedTheme === "light" || storedTheme === "dark") root.dataset.theme = storedTheme;
-
-    function updateThemeControl() {
-      const isDark = root.dataset.theme === "dark";
-      themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
-      themeIcon.textContent = isDark ? "☼" : "☾";
-      document.querySelector('meta[name="theme-color"]').content = isDark ? "#080612" : "#f8fafc";
-    }
-    updateThemeControl();
-    themeToggle.addEventListener("click", () => {
-      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-      localStorage.setItem("alice-portfolio-theme", root.dataset.theme);
-      updateThemeControl();
-    });
-
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
     menuToggle.addEventListener("click", () => {
@@ -608,74 +544,6 @@
         menuToggle.querySelector("span").textContent = "☰";
       }
     });
-
-    const spotlight = document.getElementById("cursor-spotlight");
-    const spotlightLabel = spotlight.querySelector(".cursor-label");
-    const supportsSpotlight = window.matchMedia("(hover: hover) and (pointer: fine)").matches
-      && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (supportsSpotlight) {
-      let targetX = 0;
-      let targetY = 0;
-      let currentX = 0;
-      let currentY = 0;
-      let velocityX = 0;
-      let velocityY = 0;
-      let animationFrame = 0;
-      let hasPosition = false;
-
-      function animateSpotlight() {
-        velocityX = (velocityX + (targetX - currentX) * 0.18) * 0.72;
-        velocityY = (velocityY + (targetY - currentY) * 0.18) * 0.72;
-        currentX += velocityX;
-        currentY += velocityY;
-        spotlight.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
-
-        if (Math.abs(targetX - currentX) > 0.15 || Math.abs(targetY - currentY) > 0.15 || Math.abs(velocityX) > 0.1 || Math.abs(velocityY) > 0.1) {
-          animationFrame = requestAnimationFrame(animateSpotlight);
-        } else {
-          currentX = targetX;
-          currentY = targetY;
-          velocityX = 0;
-          velocityY = 0;
-          animationFrame = 0;
-        }
-      }
-
-      document.addEventListener("pointermove", (event) => {
-        const hoveredElement = event.target instanceof Element ? event.target : null;
-        if (hoveredElement?.closest("input, textarea, select")) {
-          spotlight.classList.remove("is-visible", "is-morphed");
-          return;
-        }
-
-        targetX = event.clientX;
-        targetY = event.clientY;
-        if (!hasPosition) {
-          currentX = targetX;
-          currentY = targetY;
-          hasPosition = true;
-        }
-
-        spotlight.classList.add("is-visible");
-        const interactive = hoveredElement?.closest("[data-cursor]");
-        const label = interactive?.getAttribute("data-cursor") || "";
-        spotlightLabel.textContent = label;
-        spotlight.classList.toggle("is-morphed", Boolean(label));
-        if (label) spotlight.style.setProperty("--spotlight-width", `${Math.ceil(label.length * 6.5 + 28)}px`);
-
-        if (!animationFrame) animationFrame = requestAnimationFrame(animateSpotlight);
-      }, { passive: true });
-
-      function hideSpotlight() {
-        spotlight.classList.remove("is-visible", "is-morphed");
-        spotlightLabel.textContent = "";
-        hasPosition = false;
-      }
-
-      document.addEventListener("pointerleave", hideSpotlight);
-      window.addEventListener("blur", hideSpotlight);
-    }
 
   </script>
 </body>
